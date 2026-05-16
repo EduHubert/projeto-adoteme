@@ -5,7 +5,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker, Session
 import hashlib
 import jwt
 from datetime import datetime, timedelta, timezone
-from fastapi.middleware.cors import CORSMiddleware # <-- 1. IMPORT DO CORS ADICIONADO AQUI
+from fastapi.middleware.cors import CORSMiddleware
 
 # ==========================================
 # 1. Configurações de Banco e Segurança
@@ -48,6 +48,7 @@ class UsuarioLogin(BaseModel):
 class UsuarioRedefinir(BaseModel):
     email: str
     nova_senha: str
+
 # ==========================================
 # 3. Inicialização e Dependências (CORS CONFIGURADO AQUI)
 # ==========================================
@@ -115,7 +116,8 @@ def login(usuario: UsuarioLogin, db: Session = Depends(get_db)):
     
     token_jwt = jwt.encode(dados_token, SECRET_KEY, algorithm=ALGORITHM)
 
-    return {"access_token": token_jwt, "token_type": "bearer"}
+    # Adicionamos o "papel" no return para o Front-end saber quem está entrando!
+    return {"access_token": token_jwt, "token_type": "bearer", "papel": db_user.papel}
 
 @app.put("/usuarios/redefinir-senha")
 def redefinir_senha(dados: UsuarioRedefinir, db: Session = Depends(get_db)):

@@ -249,3 +249,80 @@ html, body, #root {
 .message.error {
   color: #dc3545;
 }
+
+/* =========================================
+   Estilos do Catálogo de Animais
+   ========================================= */
+.catalogo-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.catalogo-container h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.grid-animais {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.animal-card {
+  background-color: #fff;
+  border: 2px solid #111;
+  border-radius: 2px;
+  padding: 25px;
+  box-shadow: 4px 4px 0px #ff6600; /* Estilo sombra dura (brutalista) */
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.animal-card:hover {
+  transform: translateY(-5px);
+}
+
+.animal-card h3 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #ff6600;
+  border-bottom: 2px dashed #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.animal-info {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.animal-descricao {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+  flex-grow: 1; /* Empurra o botão para baixo */
+}
+
+.btn-adotar {
+  margin-top: 25px;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px;
+}
+
+/* Estilo da Foto do Animal no Card */
+.animal-foto {
+  width: 100%;
+  height: 220px;
+  object-fit: cover; /* Corta a imagem para caber perfeitamente sem amassar */
+  border: 2px solid #111;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  background-color: #eee;
+}
