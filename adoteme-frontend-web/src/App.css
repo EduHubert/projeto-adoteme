@@ -1,0 +1,251 @@
+/* =========================================
+   App.css - Estilo para o Adote-Me (Corrigido)
+   ========================================= */
+
+/* 1. Força a tela a ocupar 100% e anula as margens brancas padrão do Vite */
+html, body, #root {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh;
+  background-color: #f6f6f6;
+}
+
+:root {
+  font-family: monospace;
+  color: #333;
+  box-sizing: border-box;
+}
+
+/* Header (Cabeçalho) Escuro */
+.adoteme-header {
+  background-color: #333;
+  color: #f7f7f7;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #555;
+  width: 100%; /* Garante que estica tudo */
+  box-sizing: border-box;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.brand-paws {
+  color: #ff6600; 
+  margin-right: 15px;
+  font-size: 28px;
+}
+
+.brand-text {
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 16px;
+}
+
+.nav-link {
+  color: #f7f7f7;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Área de Conteúdo Principal e Card de Login */
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); 
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-card {
+  background-color: #f7f7f7;
+  padding: 40px;
+  width: 450px;
+  max-width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+  border-radius: 2px; 
+  text-align: center;
+}
+
+/* 2. Logo de Pegadas corrigido (sem sobrepor o texto) */
+.login-paws {
+  color: #ff6600; 
+  font-size: 55px;
+  margin-top: 0;
+  margin-bottom: 15px; /* Margem positiva empurra o texto para baixo */
+  display: inline-block;
+}
+
+.login-card h2 {
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 35px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Alert Box de Criptografia */
+.alert-box {
+  background-color: #dbe4f2; 
+  border: 2px solid #a8b8d1; 
+  padding: 18px 20px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #3e4f6e;
+  text-align: left;
+}
+
+.alert-icon {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+/* Estilo para Formulários, Labels e Inputs */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  text-transform: uppercase; 
+  letter-spacing: 1px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 15px;
+  font-family: monospace;
+  font-size: 16px;
+  border: 2px solid #111; 
+  background-color: #f7f7f7;
+  border-radius: 2px;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #ff6600; 
+}
+
+/* Links Adicionais */
+.extra-links {
+  margin-top: -10px;
+  margin-bottom: 30px;
+  text-align: right;
+  font-size: 13px;
+}
+
+.forgot-password-link {
+  color: #555;
+  text-decoration: underline;
+}
+
+.forgot-password-link:hover {
+  color: #111;
+}
+
+/* Botão ENTRAR */
+.submit-button {
+  background-color: #333; 
+  color: #f7f7f7;
+  padding: 15px 30px;
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.submit-button::after {
+  content: "→"; 
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+.submit-button:hover {
+  background-color: #111;
+}
+
+/* Link de Inscrição */
+.signup-section {
+  margin-top: 35px;
+  font-size: 16px;
+  color: #555;
+}
+
+.signup-link {
+  color: #111;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.signup-link:hover {
+  text-decoration: none;
+}
+
+/* Footer (Rodapé) */
+.adoteme-footer {
+  background-color: #333;
+  color: #999;
+  padding: 15px 50px;
+  text-align: center;
+  font-size: 13px;
+  border-top: 2px solid #555;
+  width: 100%; /* Garante que estica tudo */
+  box-sizing: border-box;
+}
+
+/* Mensagens de Feedback */
+.message {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.message.success {
+  color: #28a745;
+}
+
+.message.error {
+  color: #dc3545;
+}
